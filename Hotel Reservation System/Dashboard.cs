@@ -16,5 +16,12 @@ namespace Hotel_Reservation_System
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddCustomer open_addcustomer = new AddCustomer();
+            open_addcustomer.Show();
+            this.Hide();
+        }
     }
 }
