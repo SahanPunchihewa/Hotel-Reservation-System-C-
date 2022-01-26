@@ -93,6 +93,9 @@
     <EmbeddedResource Include="AddPackage.resx">
       <DependentUpon>AddPackage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddRoom.resx">
+      <DependentUpon>AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
