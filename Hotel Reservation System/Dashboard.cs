@@ -23,5 +23,19 @@ namespace Hotel_Reservation_System
             open_addcustomer.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddPackage open_addpackage = new AddPackage();
+            open_addpackage.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddRoom open_addroom = new AddRoom();
+            open_addroom.Show();
+            this.Hide();
+        }
     }
 }
