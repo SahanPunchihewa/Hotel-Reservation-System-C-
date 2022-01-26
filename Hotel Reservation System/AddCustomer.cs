@@ -30,6 +30,8 @@ namespace Hotel_Reservation_System
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Customer Data Insert Crud
+
             try
             {
 
@@ -61,6 +63,8 @@ namespace Hotel_Reservation_System
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Customer Details View Crud
+
             try
             {
 
@@ -94,6 +98,82 @@ namespace Hotel_Reservation_System
             {
 
                 MessageBox.Show("Error");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Dashboard open_dashboard = new Dashboard();
+            open_dashboard.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Customer Update Crud
+
+            try
+            {
+
+                string MyConnection = "server=localhost; userId=root; password=; database=hotelsystem";
+
+                string query = "UPDATE `customer` SET `id` = '" + this.txt_id.Text + "', `name` = '" + this.txt_name.Text + "', `address` ='" + this.txt_address.Text + "', `contact`= '" + this.txt_contact.Text + "' WHERE `id`= '" + this.txt_id.Text + "'";
+                MySqlConnection Myconn = new MySqlConnection(MyConnection);
+                MySqlCommand Mycommand = new MySqlCommand(query, Myconn);
+                MySqlDataReader MyReader;
+                Myconn.Open();
+                MyReader = Mycommand.ExecuteReader();
+                MessageBox.Show("Customer Details Successfully Updated!");
+                while (MyReader.Read())
+
+                txt_id.Text = "";
+                txt_name.Text = "";
+                txt_address.Text = "";
+                txt_contact.Text = "";
+                
+
+                Myconn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            // Customer Delete Crud
+            try
+            {
+
+                string MyConnection = "server=localhost; userId=root; password=; database=hotelsystem";
+                string query = "DELETE FROM `customer` WHERE id = '" + this.txt_id.Text + "'";
+
+                MySqlConnection Myconn = new MySqlConnection(MyConnection);
+                MySqlCommand Mycommand = new MySqlCommand(query, Myconn);
+                MySqlDataReader MyReader;
+                Myconn.Open();
+                MyReader = Mycommand.ExecuteReader();
+                MessageBox.Show("Customer Successfully Deleted!");
+
+                txt_id.Text = "";
+                txt_name.Text = "";
+                txt_address.Text = "";
+                txt_contact.Text = "";
+               
+                Myconn.Close();
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }
