@@ -24,8 +24,8 @@ namespace Hotel_Reservation_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Register open_register = new Register();
-            open_register.Show();
+            Login open_Login = new Login();
+            open_Login.Show();
             this.Hide();
 
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hotel_Reservation_System
 {
-    public partial class Register : Form
+    public partial class Dashboard : Form
     {
-        public Register()
+        public Dashboard()
         {
             InitializeComponent();
         }
